@@ -8,10 +8,10 @@
 <body>
  <div id="app">
      <div > {{num}} </div>
-     <div>
-       
-         <button  @click='handler1'>点击1</button>
-         <button  @click='handler(123,456,$event)'>点击3</button>
+     <div v-on:click='handler0'>
+       <!-- .stop 的方式阻止冒泡 -->
+         <button  @click.stop='handler1'>点击1</button>
+     
      </div>
  </div>
     <script src="./vue.js"></script>
@@ -22,13 +22,12 @@
               num:0
             },
             methods:{
-              handler:function(p,p1,event){
-                this.num++;//this 指向vue的实例对象
-                console.log(p,p1);
-                console.log(event.target.innerHTML);
-              } ,
+           handler0:function(){
+                    this.num++;    
+           },
               handler1:function(event){
-                console.log(event.target.innerHTML);
+                  
+                //   event.stopPropagation();//阻止冒泡行为
 
               }
             }

@@ -11,7 +11,7 @@
      <div>
        
          <button  @click='handler'>点击2</button>
-         <button  @click='handler(123)'>点击3</button>
+         <button  @click='handler(123,456)'>点击3</button>
      </div>
  </div>
     <script src="./vue.js"></script>
@@ -22,9 +22,9 @@
               num:0
             },
             methods:{
-              handler:function(p){
+              handler:function(p,p1){
                 // this.num++;
-                console.log(p);
+                console.log(p,p2);
               } 
             }
         });

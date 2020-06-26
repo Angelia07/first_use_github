@@ -13,6 +13,9 @@
          <button  @click.stop='handler1'>点击1</button>
      
      </div>
+     <div>
+         <a href="http://www.baidu.com" @click.prevent='handler3'>跳到百度</a>
+     </div>
  </div>
     <script src="./vue.js"></script>
     <script>
@@ -29,6 +32,9 @@
                   
                 //   event.stopPropagation();//阻止冒泡行为
 
+              },
+              handler3:function(event){
+                    // event.preventDefault();
               }
             }
         });
